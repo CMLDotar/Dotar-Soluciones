@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form #loguearse="ngForm" (ngSubmit)="ingresar()">
+  <ion-item>
+    <ion-label position="floating">Correo Electrónico</ion-label>
+    <ion-input type="email" name="correo" [(ngModel)]= "usuario.correo" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" >Contraseña</ion-label>
+    <ion-input type="password" name="contrasenia" [(ngModel)]= "usuario.contrasenia" pattern="[A-Za-z0-9@#$%]{8,20}" required ></ion-input>
+  </ion-item>
+  <ion-button  mode="ios" expand="block" (click)="onClick()" fill="clear">
+    Olvidaste tu contraseña?
+  </ion-button>
+
+  <ion-button (click)="ingresar()" expand="block" [disabled]= "loguearse.invalid" type= "submit" >
+    Ingresar
+  </ion-button>
+  <ion-button mode="ios" expand="block" routerLink="/formulario" fill="clear">
+    REGISTRARSE
+  </ion-button>
+  </form>
+</ion-content>
+<ion-footer style="margin-bottom: 50px;">
+  
+    <ion-button class="logo" href="http://dotarsoluciones.com.ar/" expand="block" fill="clear" shape="round" style="height: 50px;" >
+      <img src="http://dotarsoluciones.com.ar/wp-content/uploads/2020/02/logo-web-negro-transp_Mesa-de-trabajo-1.png">
+    </ion-button>
+  
+</ion-footer>
+
+
+
+
+
